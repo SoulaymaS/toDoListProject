@@ -1,0 +1,12 @@
+ul li {
+    background: #f9f9f9;
+    list-style: none;
+}
+
+ul li:hover {
+    background: #ddd;
+}
+
+input[type=checkbox]:checked+label {
+    text-decoration: line-through;
+}

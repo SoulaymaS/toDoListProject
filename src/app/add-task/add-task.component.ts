@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { TaskServiceService } from '../task-service.service';
 
 @Component({
@@ -12,7 +12,9 @@ export class AddTaskComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
   addNewTask(newT){
-this.taskSer.addTask(newT);
+  this.taskSer.addTask(newT);
+  
   }
 }

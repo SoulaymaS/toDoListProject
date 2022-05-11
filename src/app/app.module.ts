@@ -9,7 +9,9 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
 import { AddTaskComponent } from './add-task/add-task.component';
-
+import { DoneTaskComponent } from './done-task/done-task.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,12 +19,16 @@ import { AddTaskComponent } from './add-task/add-task.component';
     HomeComponent,
     TodoListComponent,
     NavbarComponent,
-    AddTaskComponent
+    AddTaskComponent,
+    DoneTaskComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    PROJECT_ROUTING
+    PROJECT_ROUTING,
+    BrowserAnimationsModule,
+    MatButtonModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

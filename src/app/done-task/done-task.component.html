@@ -1,0 +1,10 @@
+<div class="container">
+    <ul>
+        <li *ngFor="let t of taskDone">
+            <i>{{t.nom}} </i>
+            <br> <i> {{t.datee | date:'shortTime'}} </i>
+            <br> <i> {{t.status}} </i> </li>
+
+    </ul>
+    <button mat-button color="primary">Primary</button>
+</div>

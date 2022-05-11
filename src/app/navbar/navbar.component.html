@@ -1,8 +1,12 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-md navbar-light bg-light">
     <div class="container-fluid">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto mb-2 mb-md-0">
-                <a class="btn btn-outline-success" [routerLink]="['login']" type="submit">Login</a>
+        <div class="d-flex">
+            <ul class="navbar-nav">
+                <li><a class="btn btn-outline-success" [routerLink]="['']" type="submit"> Home </a></li>
+                <li class="me-auto">
+                    <a class="btn btn-outline-success" [routerLink]="['login']" type="submit">Login</a>
+                </li>
+
             </ul>
         </div>
     </div>

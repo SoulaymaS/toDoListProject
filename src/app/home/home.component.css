@@ -1,8 +1,13 @@
 img {
-    width: 40%;
+    width: 20%;
     height: 20%;
 }
 
 #imgclass {
     border: solid 1px;
+}
+
+.imgclass {
+    border: solid 1px;
+    width: 40%;
 }
