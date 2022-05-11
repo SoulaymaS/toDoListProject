@@ -1,0 +1,10 @@
+<div class="container">
+    <form #f="ngForm" (ngSubmit)="ToLog(f.value)">
+        <label for="log">Username</label>
+        <input required email ngModel type="text" class="form-control" id="log" name="email">
+        <label for="pwd">Password</label>
+        <input type="text" class="form-control" id="pwd" name="password">
+        <br>
+        <button class="btn btn-success"> Login </button>
+    </form>
+</div>

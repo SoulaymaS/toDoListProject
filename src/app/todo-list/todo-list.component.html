@@ -1,4 +1,18 @@
 <div class="container">
-    <li> </li>
+    <div class="row">
+        <div class="col-6">
+            <ol>
+                <li *ngFor="let c of tabTasks" class="list-group-item"> {{ c.nom }}
+                    <br> <i> {{c.datee | date:'shortTime'}}  </i> </li>
 
+            </ol>
+        </div>
+    </div>
+</div>
+<div class="col-6">
+    <router-outlet></router-outlet>
+</div>
+<div class="container">
+    <button routerLink="add-task" class="btn btn-info"> Add a new task</button>
+    <button class="btn btn-info"> Show all Tasks</button>
 </div>
