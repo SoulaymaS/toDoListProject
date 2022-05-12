@@ -1,13 +1,28 @@
-<nav class="navbar navbar-expand-md navbar-light bg-light">
+<!--<nav class="navbar navbar-expand-md navbar-light bg-light">
     <div class="container-fluid">
-        <div class="d-flex">
+        <div id="navv">
             <ul class="navbar-nav">
-                <li><a class="btn btn-outline-success" [routerLink]="['']" type="submit"> Home </a></li>
-                <li class="me-auto">
-                    <a class="btn btn-outline-success" [routerLink]="['login']" type="submit">Login</a>
+                <li><a class="btn" [routerLink]="['']" type="submit"> Home </a></li>
+
+                <li *ngIf="loginSer.isConnected()" class="me-auto">
+                    <a class="btn btn-outline-success" [routerLink]="['login']" type="submit">Logout</a>
                 </li>
 
             </ul>
         </div>
     </div>
 </nav>
+-->
+<mat-toolbar>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" [routerLink]="['']">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Let's Get Orgnaized!</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button>
+</mat-toolbar>

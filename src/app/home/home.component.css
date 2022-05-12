@@ -1,13 +1,42 @@
-img {
-    width: 20%;
-    height: 20%;
+#imgdiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #imgclass {
-    border: solid 1px;
+    background-color: white;
+    width: 60%;
+    height: 80%;
+    justify-self: center;
 }
 
-.imgclass {
-    border: solid 1px;
-    width: 40%;
+h2 {
+    font-size: 50px;
+    padding: 40px;
+    text-align: center;
+    font-family: "Papyrus";
+    font-weight: bolder;
+    color: #D45769;
+}
+
+button {
+    background-color: #D45769;
+    color: white;
+}
+
+#divbut {
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    width: 100px;
+    height: 400px;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+    border-color: black;
 }

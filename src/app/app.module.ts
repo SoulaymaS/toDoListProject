@@ -12,6 +12,20 @@ import { AddTaskComponent } from './add-task/add-task.component';
 import { DoneTaskComponent } from './done-task/done-task.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCHK1Umb4rwEgaz9kKcVSA5tZxaytnZ9UM",
+  authDomain: "todolistproject-e238b.firebaseapp.com",
+  projectId: "todolistproject-e238b",
+  storageBucket: "todolistproject-e238b.appspot.com",
+  messagingSenderId: "795654737935",
+  appId: "1:795654737935:web:489666fab1b7c3d6a4137a",
+  measurementId: "G-54T0FREXK9"
+};
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +41,11 @@ import {MatButtonModule} from '@angular/material/button';
     FormsModule,
     PROJECT_ROUTING,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatToolbarModule,
+    MatIconModule,
+    provideFirebaseApp(() => initializeApp(firebaseConfig)),
+    HttpClientModule
     
   ],
   providers: [],

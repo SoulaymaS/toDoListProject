@@ -1,31 +1,35 @@
 <div class="container">
-    <h4> Aujourd'hui </h4>
-    <div class="row">
-        <div class="col-6">
-            <ul>
-                <li *ngFor="let c of tabTasks">
+    <br>
+    <h2> Daily Planner </h2>
+
+    <div id="element">
+        <ul>
+            <li class="list-group-item d-flex justify-content-between" *ngFor="let c of tabTasks">
+                <div class="checkitem">
                     <input id="check" type="checkbox" [checked]="c.status" (change)="changeStatut(c)" />
                     <label>{{ c.nom}} </label>
-                    <!-- <div *ngIf="!c.status">{{ c.nom }}</div>
+                </div>
+
+                <!-- <div *ngIf="!c.status">{{ c.nom }}</div>
                     <div *ngIf="c.status" style="text-decoration: line-through;">{{ c.nom }}</div> -->
-                    <br> <i> {{c.datee | date:'shortTime'}} </i>
-                    <br> <i> {{c.status}} </i>
-                    <button (click)="deleteTask(c)"> Delete </button> </li>
+                <br> <i class="fw-bold"> {{c.datee | date:'shortTime'}} </i>
+                <br> <i class="fw-bold"> {{c.status}} </i>
+                <!--<button (click)="deleteTask(c)"> Delete </button> </li>-->
 
-            </ul>
-        </div>
-        <div class="col-6">
-            <router-outlet></router-outlet>
-        </div>
+        </ul>
     </div>
-    <div *ngIf="!isShow">
-        <input #ref type="text">
-        <button (click)="addNewTask(ref.value)" class="btn btn-info"> Ajouter</button>
-    </div>
+    <br>
+    <div id="buttons">
+        <div *ngIf="!isShow">
+            <input #ref type="text">
+            <button (click)="addNewTaskAPI(ref.value)" class="btn"> Ajouter</button>
+        </div>
 
-    <br>
-    <button *ngIf="isShow" (click)="show()" class="btn btn-info"> Add a new task</button>
-    <br>
-    <button *ngIf="!isShow" (click)="show()" class="btn btn-danger">Annuler</button>
-    <button class="btn btn-info" routerLink="done-task"> Show task History</button>
+
+        <button id="b" *ngIf="isShow" (click)="show()" class="btn"> Add a new task</button>
+
+        <button *ngIf="!isShow" (click)="show()" class="btn">Annuler</button>
+
+        <button id="b1" class="btn" routerLink="done-task"> Show task History</button>
+    </div>
 </div>

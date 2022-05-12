@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginserviceService } from '../loginservice.service';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @Component({
   selector: 'app-navbar',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(public loginSer: LoginserviceService) { }
 
   ngOnInit(): void {
   }

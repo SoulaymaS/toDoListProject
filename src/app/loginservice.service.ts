@@ -1,17 +1,21 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginserviceService {
+  link = 'https://todolistproject-e238b-default-rtdb.firebaseio.com/users.json';
+  constructor(private http: HttpClient,
+    private router : Router) { }
 
-  constructor() { }
-
-  isConnected(){
+  getConnected(ident) {
+    return this.http.get(this.link);
+  }
+  isDeconnected() {
 
   }
-  isDeconnected(){
+  isConnected() { }
 
-  }
-  
 }

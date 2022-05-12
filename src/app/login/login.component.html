@@ -1,10 +1,14 @@
-<div class="container">
-    <form #f="ngForm" (ngSubmit)="ToLog(f.value)">
+<br>
+<div id="formdiv" class="container">
+    <br>
+    <form #f="ngForm" method="post" (ngSubmit)="ToLogin(f.value)" name="userform">
         <label for="log">Username</label>
-        <input required email ngModel type="text" class="form-control" id="log" name="email">
-        <label for="pwd">Password</label>
-        <input type="text" class="form-control" id="pwd" name="password">
         <br>
-        <button class="btn btn-success"> Login </button>
+        <input required email ngModel type="text" class="form-control" id="log" name="email">
+        <br>
+        <label for="pwd">Password</label>
+        <input type="text" ngModel class="form-control" id="pwd" name="login">
+        <br>
+        <button mat-raised-button> Login </button>
     </form>
 </div>

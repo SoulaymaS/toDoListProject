@@ -1,6 +1,9 @@
 ul li {
     background: #f9f9f9;
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 ul li:hover {
@@ -9,4 +12,49 @@ ul li:hover {
 
 input[type=checkbox]:checked+label {
     text-decoration: line-through;
+}
+
+h2 {
+    font-size: 30px;
+    padding: 40px;
+    text-align: center;
+    font-family: "Papyrus";
+    font-weight: bolder;
+    color: #D45769;
+}
+
+ul {
+    background-color: #D45769;
+    width: 70%;
+    margin: auto;
+}
+
+label {
+    font-size: 20px;
+    font-family: "Papyrus";
+}
+
+#check {
+    margin-right: 15px;
+}
+
+#buttons {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: auto;
+}
+
+#b {
+    background-color: rgb(32, 26, 26);
+    margin-bottom: 20px;
+    color: white;
+}
+
+#b1:hover {
+    color: white;
+}
+
+#b1 {
+    background-color: #D45769;
 }
