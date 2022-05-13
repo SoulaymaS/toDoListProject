@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 
+
 let routes: Routes = [
 { path: '', component: HomeComponent},
 { path: 'login', component: LoginComponent},

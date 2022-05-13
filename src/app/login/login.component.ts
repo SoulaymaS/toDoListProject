@@ -24,14 +24,14 @@ export class LoginComponent implements OnInit {
       console.log(rep);
       for (const key in rep) {
         if (rep[key]['email'] == userInfo.email && rep[key]['login'] == userInfo.login ) {
+          //localStorage.setItem('auth',rep['isConnected']);
           this.router.navigateByUrl('todo-list');
           
         }
         else
           alert("Erreur d'authentification");
       }
-      //localStorage.setItem('our-token',rep['token']);
-      //this.router.navigateByUrl('todo-list');
+      
     },
     error:(error)=> {
       console.log('Problem in authentication');

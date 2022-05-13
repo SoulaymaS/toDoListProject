@@ -17,6 +17,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
+
 const firebaseConfig = {
   apiKey: "AIzaSyCHK1Umb4rwEgaz9kKcVSA5tZxaytnZ9UM",
   authDomain: "todolistproject-e238b.firebaseapp.com",
@@ -49,6 +50,6 @@ const firebaseConfig = {
     
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

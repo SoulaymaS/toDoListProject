@@ -9,9 +9,10 @@ import { TaskServiceService } from '../task-service.service';
 })
 export class TodoListComponent implements OnInit {
   task;
+  gotkey;
   isShow = true;
   isChecked = true;
-  tabTasks= [];
+  tabTasks = [];
   constructor(private taskSer: TaskServiceService,
     private http: HttpClient) { }
 
@@ -20,10 +21,11 @@ export class TodoListComponent implements OnInit {
       next: (res) => {
         console.log(res);
         for (const key in res) {
+          res[key].id = key;
           this.tabTasks.push(res[key]);
-            
-          }
-          console.log(this.tabTasks);
+
+        }
+        console.log(this.tabTasks);
       },
       error: (err) => {
         console.log(err);
@@ -39,34 +41,45 @@ export class TodoListComponent implements OnInit {
     this.isShow = !this.isShow;
   }
 
-   addNewTaskAPI(newT) {
-     this.taskSer.addTaskApi({
-        nom: newT,
-        datee: new Date(),
-        status: false,
-     }).subscribe({
-       next: (res) => {
-         console.log(res);
-         this.isShow = !this.isShow;
-         window.location.reload();
-       },
+  addNewTaskAPI(newT) {
+    this.taskSer.addTaskApi({
+      nom: newT,
+      datee: new Date(),
+      status: false,
+    }).subscribe({
+      next: (res) => {
+        console.log(res);
+        this.isShow = !this.isShow;
+        window.location.reload();
+      },
       error: (err) => {
+        console.log(err);
+      },
+    });
+  }
+
+  changeStatut(c) {
+    c.status = !c.status;
+    this.taskSer.updateTask(c);
+  }
+  changeStatutAPI(c) {
+    c.status = !c.status;
+    this.taskSer.updateTaskAPI(c).subscribe({
+       next: (res) => {
+        console.log(res);
+       },
+       error: (err) => {
          console.log(err);
       },
      });
-   }
-
-changeStatut(c) {
-  c.status = !c.status;
-  this.taskSer.updateTask(c);
-}
-
-displayStatus(c){
-  if (c == false) {
-    c = "TODO";
-  } else {
-    c = "DONE";
   }
-}
-  
+
+  displayStatus(c) {
+    if (c == false) {
+      c = "TODO";
+    } else {
+      c = "DONE";
+    }
+  }
+
 }

@@ -1,23 +1,17 @@
-<!-- <div class="container">
-    <ul>
-        <li *ngFor="let t of taskDone">
-            <i>{{t.nom}} </i>
-            <br> <i> {{t.datee | date:'shortTime'}} </i>
-            <br> <i> {{t.status}} </i> </li>
-
-    </ul>
-</div> -->
 <h2> History of Tasks </h2>
 <br>
-<div id="element">
+<div id="element" class="container">
     <ul>
         <li class="list-group-item d-flex justify-content-between" *ngFor="let t of taskDone">
             <div class="checkitem">
                 <label>{{ t.nom}} </label>
+
             </div>
 
             <br> <i class="fw-bold"> {{t.datee | date:'shortTime'}} </i>
             <br> <i class="fw-bold"> {{t.status}} </i>
+            <br> <i class="fw-bold"> {{t.datee | date:'shortTime'}} </i>
+
             <!--<button (click)="deleteTask(c)"> Delete </button> </li>-->
 
     </ul>

@@ -12,13 +12,29 @@ export class DoneTaskComponent implements OnInit {
   constructor(private taskSer: TaskServiceService) { }
 
   ngOnInit(): void {
-    this.tab = this.taskSer.getAllTasks();
-    console.log(this.tab);
-    this.tab.forEach
-      (e => {
-        if (e.status) { this.taskDone.push(e) }
-      });
-    console.log(this.taskDone);
+    this.taskSer.getAllTasksApi().subscribe({
+      next: (res) => {
+        console.log(res);
+        for (const key in res) {
+          if (res[key]['status']) {
+            this.taskDone.push(res[key]);
+            
+          }
+        }
+        console.log(this.tab);
+        },
+        error: (err) => {
+          console.log(err);
+        },
+     });
+    
   }
+
 }
 
+  //this.tab.forEach
+  // (e => {
+  //  if (e.status) { this.taskDone.push(e) }
+  // });
+  //console.log(this.taskDone);
+  //  }

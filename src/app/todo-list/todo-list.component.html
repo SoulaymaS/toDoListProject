@@ -6,14 +6,17 @@
         <ul>
             <li class="list-group-item d-flex justify-content-between" *ngFor="let c of tabTasks">
                 <div class="checkitem">
-                    <input id="check" type="checkbox" [checked]="c.status" (change)="changeStatut(c)" />
+                    <input id="check" type="checkbox" [checked]="c.status" (change)="changeStatutAPI(c)" />
                     <label>{{ c.nom}} </label>
                 </div>
 
                 <!-- <div *ngIf="!c.status">{{ c.nom }}</div>
                     <div *ngIf="c.status" style="text-decoration: line-through;">{{ c.nom }}</div> -->
                 <br> <i class="fw-bold"> {{c.datee | date:'shortTime'}} </i>
-                <br> <i class="fw-bold"> {{c.status}} </i>
+                <span *ngIf="c.status"> DONE</span>
+                <span *ngIf="!c.status"> TODO</span>
+                <!--<br> <i class="fw-bold" > {{c.status}} </i>-->
+
                 <!--<button (click)="deleteTask(c)"> Delete </button> </li>-->
 
         </ul>
