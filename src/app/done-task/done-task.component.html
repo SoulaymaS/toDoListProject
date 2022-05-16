@@ -8,9 +8,11 @@
 
             </div>
 
-            <br> <i class="fw-bold"> {{t.datee | date:'shortTime'}} </i>
-            <br> <i class="fw-bold"> {{t.status}} </i>
-            <br> <i class="fw-bold"> {{t.datee | date:'shortTime'}} </i>
+            <!-- 
+                <span *ngIf="t.status"> DONE</span>
+            <span *ngIf="!t.status"> TODO</span>
+                <br> <i class="fw-bold"> {{t.status}} </i>-->
+            <br> <i class="fw-bold"> {{t.datee | date:'short'}} </i>
 
             <!--<button (click)="deleteTask(c)"> Delete </button> </li>-->
 

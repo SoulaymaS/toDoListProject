@@ -8,14 +8,14 @@ import { HomeComponent } from './home/home.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
-import { AddTaskComponent } from './add-task/add-task.component';
 import { DoneTaskComponent } from './done-task/done-task.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { RegisterComponent } from './register/register.component';
 
 
 const firebaseConfig = {
@@ -34,8 +34,8 @@ const firebaseConfig = {
     HomeComponent,
     TodoListComponent,
     NavbarComponent,
-    AddTaskComponent,
-    DoneTaskComponent
+    DoneTaskComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

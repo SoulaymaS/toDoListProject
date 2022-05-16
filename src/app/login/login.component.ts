@@ -9,7 +9,8 @@ import { LoginserviceService } from '../loginservice.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+tabUsers=[];
+log= false;
   constructor(private http:HttpClient, 
     private logSer: LoginserviceService,
     private router: Router ) { }
@@ -19,19 +20,22 @@ export class LoginComponent implements OnInit {
   
 
   ToLogin(userInfo){
+    
   this.logSer.getConnected(userInfo).subscribe({
     next: (rep) => {
-      console.log(rep);
-      for (const key in rep) {
-        if (rep[key]['email'] == userInfo.email && rep[key]['login'] == userInfo.login ) {
-          //localStorage.setItem('auth',rep['isConnected']);
-          this.router.navigateByUrl('todo-list');
-          
+        for (const key in rep) {
+        
+          if (rep[key]['email'] == userInfo.email && rep[key]['login'] == userInfo.login ) {
+            console.log(rep[key],userInfo);
+            localStorage.setItem('auth',rep['isConnected']);
+            this.router.navigateByUrl('todo-list');
+            this.log=true;
+          }
         }
-        else
-          alert("Erreur d'authentification");
-      }
-      
+        if (!this.log) {
+          alert('Error authentication!');
+        }
+
     },
     error:(error)=> {
       console.log('Problem in authentication');

@@ -11,7 +11,11 @@ export class LoginserviceService {
     private router : Router) { }
 
   getConnected(ident) {
-    return this.http.get(this.link);
+    return this.http.get(`${this.link}`);
+  }
+  
+  getRegistered(ident){
+   return this.http.post(`${this.link}`,ident);
   }
   isDeconnected() {
 

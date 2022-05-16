@@ -35,11 +35,12 @@ export class TodoListComponent implements OnInit {
   show() {
     this.isShow = !this.isShow;
   }
-  addNewTask(newT) {
+  //static test
+  // addNewTask(newT) {
 
-    this.taskSer.addTask(newT);
-    this.isShow = !this.isShow;
-  }
+  //   this.taskSer.addTask(newT);
+  //   this.isShow = !this.isShow;
+  // }
 
   addNewTaskAPI(newT) {
     this.taskSer.addTaskApi({
@@ -57,11 +58,11 @@ export class TodoListComponent implements OnInit {
       },
     });
   }
-
-  changeStatut(c) {
-    c.status = !c.status;
-    this.taskSer.updateTask(c);
-  }
+//Static test
+  // changeStatut(c) {
+  //   c.status = !c.status;
+  //   this.taskSer.updateTask(c);
+  // }
   changeStatutAPI(c) {
     c.status = !c.status;
     this.taskSer.updateTaskAPI(c).subscribe({
@@ -74,12 +75,5 @@ export class TodoListComponent implements OnInit {
      });
   }
 
-  displayStatus(c) {
-    if (c == false) {
-      c = "TODO";
-    } else {
-      c = "DONE";
-    }
-  }
 
 }

@@ -31,7 +31,7 @@ export class TaskServiceService {
     });
   }
   addTaskApi(newT) {
-    return this.http.post(this.link, newT);
+    return this.http.post(`${this.link}/${newT.id}`, newT);
 
   }
   updateTask(T) {
@@ -46,8 +46,7 @@ export class TaskServiceService {
       "datee": T.datee,
       "status": T.status
     }
-    return this.http.patch(`${this.link}`, o);
-
+    return this.http.patch(`${this.link}/${T.id}`, o); 
   }
 
 

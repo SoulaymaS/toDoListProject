@@ -1,0 +1,14 @@
+<br>
+<div id="formdiv" class="container">
+    <br>
+    <form #f="ngForm" method="post" (ngSubmit)="ToRegister(f.value)" name="userform">
+        <label for="log">Username</label>
+        <br>
+        <input required email ngModel type="text" class="form-control" id="log" name="email">
+        <br>
+        <label for="pwd">Password</label>
+        <input type="text" ngModel class="form-control" id="pwd" name="login">
+        <br>
+        <button mat-raised-button> Register </button>
+    </form>
+</div>
