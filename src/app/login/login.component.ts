@@ -35,7 +35,6 @@ log= false;
         if (!this.log) {
           alert('Error authentication!');
         }
-
     },
     error:(error)=> {
       console.log('Problem in authentication');

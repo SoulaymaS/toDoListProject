@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, Input } from '@angular/core';
+import { LoginserviceService } from './loginservice.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,8 @@ export class TaskServiceService {
   link = 'https://todolistproject-e238b-default-rtdb.firebaseio.com/tasks.json';
   private listTasks = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+    private usersServ : LoginserviceService) { }
   getAllTasks() {
     return this.listTasks;
   }
@@ -31,13 +33,14 @@ export class TaskServiceService {
     });
   }
   addTaskApi(newT) {
-    return this.http.post(`${this.link}/${newT.id}`, newT);
+    return this.http.post(`${this.link}`, newT);
 
   }
-  updateTask(T) {
-    let i = this.listTasks.indexOf(T);
-    this.listTasks[i] = T;
-  }
+  //static test
+  // updateTask(T) {
+  //   let i = this.listTasks.indexOf(T);
+  //   this.listTasks[i] = T;
+  // }
   updateTaskAPI(T) {
     console.log(T);
     let o = new Object();
@@ -46,7 +49,7 @@ export class TaskServiceService {
       "datee": T.datee,
       "status": T.status
     }
-    return this.http.patch(`${this.link}/${T.id}`, o); 
+    return this.http.patch(`${this.link}`, o); 
   }
 
 

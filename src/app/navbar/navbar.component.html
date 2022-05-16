@@ -20,9 +20,17 @@
     <span>Let's Get Orgnaized!</span>
     <span class="example-spacer"></span>
     <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <mat-icon>favorite</mat-icon>
+      <a style="color:black" href="https://github.com/SoulaymaS/toDoListProject"> <mat-icon>favorite</mat-icon> </a>
     </button>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
       <mat-icon>share</mat-icon>
-    </button>
+    </button> -->
+    <div id="logoutbutton" class="d-flex justify-content-between">
+
+        <button mat-raised-button id="logoutbutton" *ngIf="loginSer.isConnected()" (click)="logout()" [routerLink]="['']">
+    LOGOUT </button>
+    </div>
+
+
+
 </mat-toolbar>

@@ -17,9 +17,13 @@ export class LoginserviceService {
   getRegistered(ident){
    return this.http.post(`${this.link}`,ident);
   }
-  isDeconnected() {
-
+  seDeconnecter() {
+    localStorage.removeItem('auth');
   }
-  isConnected() { }
 
+  isConnected() { 
+  let token = localStorage.getItem('auth');
+  if (token) return true;
+  else return false;
+}
 }

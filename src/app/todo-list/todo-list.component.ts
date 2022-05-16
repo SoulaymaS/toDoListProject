@@ -9,7 +9,6 @@ import { TaskServiceService } from '../task-service.service';
 })
 export class TodoListComponent implements OnInit {
   task;
-  gotkey;
   isShow = true;
   isChecked = true;
   tabTasks = [];
